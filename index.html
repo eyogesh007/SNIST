@@ -15,11 +15,14 @@
     <link rel="icon" href="./images/fav.ico">
 </head>
 
-<body>
+<body onload="myFunction()">
+
+    <div id="loading"><h1 style="text-align: center;margin-top:80px">SNIST</h1></div>
+
     <div class="hero">
 
         <video autoplay loop muted plays-inline class="back-video">
-            <source src="./images/sreenidhi2.mp4" type="video/mp4">
+            <source src="./images/sree.mp4" type="video/mp4">
         </video>
         
     <section class="header1" id="top">
@@ -33,7 +36,7 @@
                     <li><a href="#departments">Departments</a></li>
                     <li><a href="#pricing">Placements</a></li>
                     <li><a href="#infrastructure">Infrastructure</a></li>
-                    
+                    <li><a href="#students">Students</a></li>
                     <li><a href="#contactus">Contact Us</a></li>
                 </ul>
             </div>
@@ -43,54 +46,74 @@
 
         <div class="text-box">
             <h1 style="font-weight: 900;">Your Journey Starts Here</h1>
-            <p style="font-weight: 600;">Applications to sreenidhi are now open!<br> Ready to join a vibrant community of innovators, creators and explorers? <br>We're ready to meet you.</p>
+            <p style="font-weight: 600;">Applications to Sreenidhi are now open!<br> Ready to join a vibrant community of innovators, creators and explorers? <br>We're ready to meet you.</p>
             <a href="./apply.html" class="hero-btn">APPLY NOW</a>
         </div>
     </section>
 
     <a class="btn pl-0 pr-0 btn-warning fixed" href="./feedback.html" role="button">😊  f e e d b a c k</a>
   <a href="#top"><i class="fa fa-arrow-circle-up fixed2 fa-2x" aria-hidden="true"></i></a>
+  <div class="marquee">
+    <div style='display:flex;
+    felx-direction:column;'>
+      <a href="https://airbook.tech/" target="_blank">Sreenidhi Ascend Incubate product launch</a>
+      <span>  |  </span>
+      <a href='./images/snistn.pdf' target="_blank">Our CEO Mr K Abhijit Rao has stated that SNIST has signed an MoU with Dhruva Space.</a>
+      <span>  |  </span>
+          <a href='./images/snistr.pdf' target="_blank">Faculty Recruitment in CSE, IT, CSE AI & ML, CSE DS, CSE CS and CSE IoT department</a>
+      <span>  |  </span>
+      
+    </div>
+  </div>
 
     <section class="white-section" id="departments">
 
 
-        <h2 class="section-heading">Departements</h2>
+        <h2 class="section-heading">Departments</h2>
         <p>With a steady growth in placements everyyear,SNIST is delivering a creative and skilled workforce to the corporate sectors</p>
 
-        <div class="row">
+        
 
-            <div class="pricing-column col-lg-4 col-md-6">
-                <div class="card" style="width: 15rem;">
-                    <img class="card-img-top" src="images/bb.jpeg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">B-Tech</h5>
-                        <p class="card-text">Bachelor of Technology (BTech) is a professional undergraduate engineering degree programme awarded to candidates after they complete four years of study in the field.</p>
-                        <a href="./btech.html" class="btn btn-primary">Know more</a>
-                    </div>
+        <!--deptest-->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xs-12 mb-3">
+                    <div class="card h-100">
+                        <img src="./images/bb.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">BTech</h5>
+                          <p class="card-text">Bachelor of Technology (BTech) is a professional undergraduate engineering degree programme awarded to candidates after they complete four years of study in the field.</p>
+                          <a href="./btech.html" class="btn btn-primary">Know more</a>
+
+                        </div>
+                      </div>
                 </div>
-            </div>
-            <div class="pricing-column col-lg-4 col-md-6">
-                <div class="card" style="width: 15rem;">
-                    <img class="card-img-top" src="images/mtech.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">M-Tech</h5>
-                        <p class="card-text">MTech is a professional postgraduate engineering master degree programme awarded to candidates after completion of two years of study in the discipline of engineering. </p>
-                        <a href="./mtech.html" class="btn btn-primary">Know more</a>
-                    </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xs-12 mb-3">
+                    <div class="card h-100">
+                        <img src="./images/mtech.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">MTech</h5>
+                          <p class="card-text">MTech is a professional postgraduate engineering master degree programme awarded to candidates after completion of two years of study in the discipline of engineering.</p>
+                          <a href="./mtech.html" class="btn btn-primary">Know more</a>
+
+                        </div>
+                      </div>
                 </div>
-            </div>
-            <div class="pricing-column col-lg-4 col-md-6">
-                <div class="card" style="width: 15rem;">
-                    <img class="card-img-top" src="images/mba.jpeg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">MBA</h5>
-                        <p class="card-text">The Master of business administartion (MBA) course is an academic programme oriented towards management and marketing</p>
-                        <a href="./mba.html" class="btn btn-primary">Know more</a>
-                    </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xs-12 mb-3">
+                    <div class="card h-100">
+                        <img src="./images/mba.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">MBA</h5>
+                          <p class="card-text">The Master of business administartion (MBA) course is an academic programme oriented towards management and marketing.</p>
+                         <br>
+                          <a href="./mba.html" class="btn btn-primary">Know more</a>
+
+                        </div>
+                      </div>
                 </div>
             </div>
         </div>
-
     </section>
 
 
@@ -101,8 +124,8 @@
 
         <div class="row">
 
-            <div class="pricing-column col-lg-3 col-md-6">
-                <div class="card">
+            <div class="col-sm-6 col-md-6 col-lg-3 col-xs-12 mb-3">
+                <div class="card h-100">
                     <div class="card-header">
                         <h3>Total offers</h3>
                     </div>
@@ -116,8 +139,8 @@
                 </div>
             </div>
 
-            <div class="pricing-column col-lg-3 col-md-6">
-                <div class="card">
+            <div class="col-sm-6 col-md-6 col-lg-3 col-xs-12 mb-3">
+                <div class="card h-100">
                     <div class="card-header">
                         <h3>Highest CTC</h3>
                     </div>
@@ -128,8 +151,8 @@
                     </div>
                 </div>
             </div>
-            <div class="pricing-column col-lg-3 col-md-6">
-                <div class="card">
+            <div class="col-sm-6 col-md-6 col-lg-3 col-xs-12 mb-3">
+                <div class="card h-100">
                     <div class="card-header">
                         <h3>Average CTC</h3>
                     </div>
@@ -139,8 +162,8 @@
                     </div>
                 </div>
             </div>
-            <div class="pricing-column col-lg-3">
-                <div class="card">
+            <div class="col-sm-6 col-md-6 col-lg-3 col-xs-12 mb-3">
+                <div class="card h-100">
                     <div class="card-header">
                         <h3>Mastiff</h3>
                     </div>
@@ -169,8 +192,8 @@
 
         <div class="row">
 
-            <div class="pricing-column col-lg-4 col-md-6">
-                <div class="card" style="width: 15rem;">
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xs-12 mb-3">
+                <div class="card h-100">
                     <img class="card-img-top" src="images/class1.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Academic Infrastructure</h5>
@@ -178,8 +201,8 @@
                     </div>
                 </div>
             </div>
-            <div class="pricing-column col-lg-4 col-md-6">
-                <div class="card" style="width: 15rem;">
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xs-12 mb-3">
+                <div class="card h-100">
                     <img class="card-img-top" src="images/sf2.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Sports Facilities</h5>
@@ -187,8 +210,8 @@
                     </div>
                 </div>
             </div>
-            <div class="pricing-column col-lg-4 col-md-6">
-                <div class="card" style="width: 15rem;">
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xs-12 mb-3">
+                <div class="card h-100">
                     <img class="card-img-top" src="images/tf2.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Transport Facilities</h5>
@@ -200,15 +223,64 @@
 
     </section>
 
+    <section class="lightblue-section" id="students">
+<br>
+
+        <h2 class="section-heading" >Students</h2>
+
+        
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xs-12 mb-3">
+                    <div class="card h-100">
+                        <img src="./images/clubs.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Clubs</h5>
+                          <p class="card-text">Clubs includes technical events along with few non-technical events to foster the overall development of students.</p>
+                          <br><br><br>
+                          <a href="./clubs.html" class="btn btn-primary">Know more</a>
+
+                        </div>
+                      </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xs-12 mb-3">
+                    <div class="card h-100">
+                        <img src="./images/events.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Events</h5>
+                          <p class="card-text">Events provides us with intimate and engaging experience with the college and collaboration with other colleges which ultimately leaves a lasting impression and one that is more memorable in our college life.</p>
+                          <a href="./events.html" class="btn btn-primary">Know more</a>
+
+                        </div>
+                      </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xs-12 mb-3">
+                    <div class="card h-100">
+                        <img src="./images/aluminis.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Alumnis</h5>
+                          <p class="card-text">Alumnis are great role models for current students and are often well placed to offer practical support to students as they start their careers.</p>
+                         <br><br>
+                          <a href="./alumini.html" class="btn btn-primary">Know more</a>
+
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     
 
-    <section class="lightblue-section" id="recog">
+    <section class="white-section" id="recog">
 
         <h2 class="section-heading">Recognitions</h2>
         <p>Sreenidhi is proud to be recognized by some of the most important and influential organizations around the world</p>
     </section>
 
-    <section class="colored-section lightblue-section pl-3" id="press">
+    <section class="colored-section white-section pl-3" id="press">
         <img class="press-logo ml-2" src="images/rec1.png" alt="tc-logo">
         <img class="press-logo ml-2" src="images/rec2.png" alt="tnw-logo">
         <img class="press-logo ml-2" src="images/rec3.jpg" alt="biz-insider-logo">
