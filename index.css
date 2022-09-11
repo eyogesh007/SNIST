@@ -5,7 +5,7 @@
 
 #loading{
 	position: fixed;
-	width: 100%;
+	width: 100vw;
 	height: 100vh;
 	background: #fff
 	url('./images/maingif.gif')
@@ -284,7 +284,9 @@ nav .fa {
   }
   @keyframes animate {
     100% {
-      transform: translate(-100%, 0);
+        -moz-transform:translateX(-100%);
+        -webkit-transform:translateX(-100%);	
+        transform:translateX(-100%);
     }
   }
 
