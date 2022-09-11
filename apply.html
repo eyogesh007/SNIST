@@ -22,7 +22,8 @@
                     <li><a href="./index.html#departments">Departments</a></li>
                     <li><a href="./placements.html">Placements</a></li>
                     <li><a href="./infra.html">Infrastructure</a></li>
-                    
+                    <li><a href="./index.html#students">Students</a></li>
+
                     <li><a href="#contactus">Contact Us</a></li>
                 </ul>
             </div>
@@ -32,7 +33,7 @@
 
         <div class="text-box">
             <h4>Your Journey Starts Here</h4>
-            <p>Applications to sreenidhi are now open!<br> Ready to join a vibrant community of innovators, creators and explorers? <br>We're ready to meet you.</p>
+            <p>Applications to Sreenidhi are now open!<br> Ready to join a vibrant community of innovators, creators and explorers? <br>We're ready to meet you.</p>
             <a href="./apply.html" class="hero-btn">APPLY NOW</a>
         </div>
     </section>
@@ -70,19 +71,19 @@
       </div> 
       <div class="row">    
         <div class="col-25">    
-          <label for="fname" >10th percentage</label>    
+          <label for="ten" >10th percentage</label>    
         </div>    
         <div class="col-75">    
-          <input required type="text" onkeypress="return onlyNumberKey(event)" id="fname" name="course" placeholder="Your 10th percentage..">    
+          <input required type="text" onkeypress="return onlyNumberKey(event)" id="ten" name="course" placeholder="Your 10th percentage..">    
         </div>    
       </div> 
 
       <div class="row">    
         <div class="col-25">    
-          <label for="fname" >12th percentage</label>    
+          <label for="twe" >12th percentage</label>    
         </div>    
         <div class="col-75">    
-          <input required type="text" onkeypress="return onlyNumberKey(event)" id="fname" name="course" placeholder="Your 12th percentage..">    
+          <input required type="text" onkeypress="return onlyNumberKey(event)" id="twe" name="course" placeholder="Your 12th percentage..">    
         </div>    
       </div> 
       <div class="row">    
@@ -95,10 +96,10 @@
       </div> 
       <div class="row">    
         <div class="col-25">    
-          <label for="fname" >EAMCET score</label>    
+          <label for="escore" >EAMCET score</label>    
         </div>    
         <div class="col-75">    
-          <input required type="text" onkeypress="return onlyNumberKey(event)" id="fname" name="course" placeholder="Your EAMCET score..">    
+          <input required type="text" onkeypress="return onlyNumberKey(event)" id="escore" name="escore" placeholder="Your EAMCET score..">    
         </div>    
       </div> 
       <div class="row">    
@@ -106,27 +107,27 @@
           <label for="country">Course</label>    
         </div> 
       <div class="col-75">    
-        <select required id="country" name="country">    
+        <select required id="course" name="course">    
             <option value="none">Select Course</option>    
-          <option value="1">CSE</option>    
-          <option value="2">IT</option>    
-          <option value="3">ECE</option>    
-          <option value="4">EEE</option>    
-          <option value="5">ME</option>    
-          <option value="5">Civil</option>
+          <option value="CSE">CSE</option>    
+          <option value="IT">IT</option>    
+          <option value="ECE">ECE</option>    
+          <option value="EEE">EEE</option>    
+          <option value="ME">ME</option>    
+          <option value="CIVIL">Civil</option>
         </select>    
       </div>    
     </div>   
     <div class="row">    
         <div class="col-25">    
-          <label for="fname" >Mobile number</label>    
+          <label for="mn" >Mobile number</label>    
         </div>    
         <div class="col-75">    
-          <input required type="text" onkeypress="return onlyNumberKey(event)" id="fname" name="course" placeholder="Your mobile number..">    
+          <input required type="text" onkeypress="return onlyNumberKey(event)" id="mn" name="course" placeholder="Your mobile number..">    
         </div>    
       </div>  
     <div class="row">    
-      <input type="submit" value="Submit" onclick="return detailssubmit()">    
+      <button class='btn btn-primary' id="insert" type="button">SUBMIT</button>    
     </div>    
   </form>    
 </div>  
@@ -204,6 +205,61 @@
         </div>
     </footer>
     <script src="index.js"></script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
+    
+      const firebaseConfig = {
+        apiKey: "AIzaSyA30ipIjL4dN8haaVc7Q_XJ3qzv2KTDITw",
+        authDomain: "sreenidhi-apply.firebaseapp.com",
+        databaseURL: "https://sreenidhi-apply-default-rtdb.firebaseio.com",
+        projectId: "sreenidhi-apply",
+        storageBucket: "sreenidhi-apply.appspot.com",
+        messagingSenderId: "1003025739707",
+        appId: "1:1003025739707:web:5c2da5abab24d50c495e9e"
+      };
+    
+      const app = initializeApp(firebaseConfig);
+
+      import {getDatabase,ref,set,child,update,remove} from "https://www.gstatic.com/firebasejs/9.9.4/firebase-database.js";
+
+      const db=getDatabase();
+
+      let a=document.getElementById('fname');
+      let b=document.getElementById('lname');
+      let c=document.getElementById('email');
+      let d=document.getElementById('ten');
+      let e=document.getElementById('twe');
+      let f=document.getElementById('escore');
+      let g=document.getElementById('mn');
+      let h=document.getElementById('rollno');
+      let i=document.getElementById('course');
+      let insert=document.getElementById('insert');
+
+     async function InsertData(){
+console.log(i.value)
+        if(a.value==='' || b.value==='' || c.value==='' || d.value==='' || e.value==='' || f.value==='' || g.value==='' || h.value==='' || i.value=='none')
+        alert('Please enter all the fields to submit the data')
+       else
+        { 
+          set(ref(db,'students/'+a.value+""+b.value),{         
+          First_name:a.value,
+          Last_name:b.value,
+          Email:c.value,
+          Tenth_marks:d.value,
+          Twelth_marks:e.value,
+          EAMCET_score:f.value,
+          Mobile_number:g.value,
+          EAMCET_Roll_no:h.value,
+          Course:i.value
+
+        })
+        .then(()=>alert('Data stored successfully'))
+        .catch((e)=>alert(e));}
+       
+      }
+
+      insert.addEventListener('click',InsertData);
+    </script>
     
 </body>    
 </html>

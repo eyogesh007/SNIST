@@ -23,7 +23,8 @@
                     <li><a href="./index.html#departments">Departments</a></li>
                     <li><a href="./placements.html">Placements</a></li>
                     <li><a href="./infra.html">Infrastructure</a></li>
-                    
+                    <li><a href="./index.html#students">Students</a></li>
+
                     <li><a href="#contactus">Contact Us</a></li>
                 </ul>
             </div>
@@ -33,7 +34,7 @@
 
         <div class="text-box">
             <h4>Your Journey Starts Here</h4>
-            <p>Applications to sreenidhi are now open!<br> Ready to join a vibrant community of innovators, creators and explorers? <br>We're ready to meet you.</p>
+            <p>Applications to Sreenidhi are now open!<br> Ready to join a vibrant community of innovators, creators and explorers? <br>We're ready to meet you.</p>
             <a href="./apply.html" class="hero-btn">APPLY NOW</a>
         </div>
     </section>
@@ -42,7 +43,7 @@
 
 <h3 style="text-align:center;margin-top: 20px;">CONTACT FORM</h3> 
 <div class="container1">    
-  <form method="post" action="mailto:20311a0524@sreenidhi.edu.in" enctype="text/plain">    
+  <form method="post" >    
     <div class="row">    
       <div class="col-25">    
         <label for="fname">First Name</label>    
@@ -72,7 +73,7 @@
           <label for="Course">Course</label>    
         </div>    
         <div class="col-75">    
-          <input required type="text" id="Course" name="course" placeholder="Your course..">    
+          <input required type="text" id="course" name="course" placeholder="Your course..">    
         </div>    
       </div> 
 
@@ -82,11 +83,11 @@
         <label for="Enquiry">Enquiry</label>    
       </div>    
       <div class="col-75">    
-        <textarea id="Enquiry" name="Enquiry" placeholder="Message.." style="height:200px"></textarea>    
+        <textarea id="message" name="Enquiry" placeholder="Message.." style="height:200px"></textarea>    
       </div>    
     </div>    
     <div class="row">    
-      <input type="submit" value="Submit" >    
+      <button id="insert" type="button" class="btn ml-3 btn-primary">SUBMIT</button>   
     </div>    
   </form>    
 </div>  
@@ -163,7 +164,56 @@
         </div>
         </div>
     </footer>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
     <script src="index.js"></script>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
+     
+      const firebaseConfig = {
+        apiKey: "AIzaSyA30ipIjL4dN8haaVc7Q_XJ3qzv2KTDITw",
+        authDomain: "sreenidhi-apply.firebaseapp.com",
+        databaseURL: "https://sreenidhi-apply-default-rtdb.firebaseio.com",
+        projectId: "sreenidhi-apply",
+        storageBucket: "sreenidhi-apply.appspot.com",
+        messagingSenderId: "1003025739707",
+        appId: "1:1003025739707:web:5c2da5abab24d50c495e9e"
+      };
+    
+      const app = initializeApp(firebaseConfig);
+
+      import {getDatabase,ref,set,child,update,remove} from "https://www.gstatic.com/firebasejs/9.9.4/firebase-database.js";
+
+      const db=getDatabase();
+
+      let a=document.getElementById('fname');
+      let b=document.getElementById('lname');
+      let c=document.getElementById('email');
+      let d=document.getElementById('course');
+      let e=document.getElementById('message');
+      let insert=document.getElementById('insert');
+
+     async function InsertData(){
+      if(a.value==='' || b.value==='' || c.value==='' || d.value==='' || e.value==='')
+        alert('Please enter all the fields to submit the data')
+       else
+        {
+          set(ref(db,'Contact/'+a.value+' '+b.value),{         
+          First_name:a.value,
+          Last_name:b.value,
+          Email:c.value,
+          Course:d.value,
+          Enquiry:e.value
+
+        })
+        .then(()=>alert('Data stored successfully'))
+        .catch((e)=>alert(e));}
+       
+      }
+
+      insert.addEventListener('click',InsertData);
+    </script>
     
 </body>    
 </html>

@@ -9,8 +9,6 @@ function hideMenu(){
 }
 
 function onlyNumberKey(evt) {
-          
-    // Only ASCII character in that range allowed
     var ASCIICode = (evt.which) ? evt.which : evt.keyCode
     if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
         return false;
@@ -20,3 +18,10 @@ function onlyNumberKey(evt) {
 function detailssubmit() {
     alert("Your details were Submitted");
 }
+
+var preloader = document.getElementById("loading");
+
+		function myFunction(){
+            setTimeout(()=>{preloader.style.display = 'none';},2000)
+			
+		};
