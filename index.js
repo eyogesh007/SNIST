@@ -25,3 +25,10 @@ var preloader = document.getElementById("loading");
             setTimeout(()=>{preloader.style.display = 'none';},2000)
 			
 		};
+
+        function scrollToTop() {
+            if (document.body.scrollTop !== 0 || document.documentElement.scrollTop !== 0) {
+                window.scrollBy(0, -50);
+                requestAnimationFrame(scrollToTop);
+            }
+        }

@@ -44,11 +44,15 @@ nav img {
     padding: 2% 6%;
     align-content: flex-end;
     justify-content: flex-start;
+    text-decoration: none;
+
 }
 
 .nav-links {
     flex: 1;
     text-align: right;
+    text-decoration: none;
+
 }
 
 .nav-links ul li {
@@ -56,13 +60,16 @@ nav img {
     display: inline-block;
     padding: 8px 12px;
     position: relative;
+    text-decoration: none;
+
 }
 
 .nav-links ul li a {
     color: white;
     font-size: 18px;
-    text-decoration: none;
     font-weight: 600;
+    text-decoration: none;
+
 }
 
 .nav-links ul li::after {
@@ -73,10 +80,14 @@ nav img {
     display: block;
     margin: auto;
     transition: 0.5s;
+    text-decoration: none;
+
 }
 
 .nav-links ul li::after {
-    width: 100%
+    width: 100%;
+    text-decoration: none;
+
 }
 
 .text-box {
@@ -297,3 +308,11 @@ nav .fa {
   .marquee1 div:hover{
     animation-play-state: paused;
   }
+
+  .card1{
+    border-radius: 50%;
+  }
+
+  
+  
+
